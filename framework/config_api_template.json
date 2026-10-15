@@ -1,0 +1,79 @@
+{
+  "version": "E1-FOURSTATE-API-CANDIDATE-20261015-BOUND-R3",
+  "images": {
+    "max_edge": 1536,
+    "jpeg_quality": 95,
+    "source_pixels_overwritten": false
+  },
+  "model": {
+    "backend": "openai_chat_completions",
+    "model_id": "UNSELECTED_CLOSED_MULTIMODAL_MODEL",
+    "base_url": "https://api.example.com/v1",
+    "api_key_env": "SCENTTRACE_API_KEY",
+    "temperature": 0,
+    "max_tokens": {
+      "goals": 3000,
+      "alignment": 8000,
+      "operator": 12000
+    },
+    "token_parameter": "max_tokens",
+    "timeout_seconds": 180,
+    "inference_authorized": false,
+    "weight_revision": "PROVIDER_VERSION_UNAVAILABLE",
+    "capabilities": {
+      "images": true,
+      "image_detail": true,
+      "structured_output": "json_schema"
+    },
+    "provider_parameters": {},
+    "annotation_authority": "CLOSED_SOURCE_MODEL"
+  },
+  "samples": [],
+  "repeat_confirmations": [
+    {
+      "trajectory_id": "guiowl15_8b_think__330cd04c773ac498f51afa4665461ec8",
+      "first_position": 3,
+      "last_position": 4,
+      "evidence_refs": [
+        "4",
+        "5",
+        "6"
+      ],
+      "authority": "CODEX_RESEARCHER_SOURCE_REVIEW",
+      "reason": "Native images 4,5,6 and identical public calls show consecutive attempts to type couches into the same non-input span. No query, result set, titles-only checkbox or sorting change. A tiny corner pointer icon changes; both attempts and intermediate observations are retained. This is a repeat demonstration, not a Human Gold merge."
+    }
+  ],
+  "trajectory_input": {
+    "mode": "FIXED_WINDOWS",
+    "window_units": 10,
+    "context_units": 2,
+    "alignment": "ALL_TRAJECTORIES_INCLUDING_SINGLE_GOAL",
+    "operator": "CONTINUOUS_GOAL_INTERVALS"
+  },
+  "dataset_registry": {
+    "AgentNet": "LOCAL_NATIVE_ADAPTER",
+    "OM2W": "LOCAL_NATIVE_ADAPTER",
+    "OSWorld": "LOCAL_NATIVE_ADAPTER",
+    "WebChain": {
+      "input": "LOCAL_MC60_EVIDENCE_EXPORT_OR_NORMALIZED_JSONL",
+      "priority_cohort": "Multi-Constraint",
+      "native_adapter": "IMPLEMENTED_MC60_EVIDENCE_EXPORT",
+      "real_trial_trajectories": 0,
+      "source_root": "D:\\ScentTrace_data\\PILOT4_20261010\\02_scent_measurement_validation\\WEBCHAIN_OFFICIAL_150_AUDIT_20261012\\MULTICONSTRAINT_60_EXPLORATION_AUDIT_V1",
+      "real_source_trajectories": 60,
+      "semantic_trial_trajectories": 0
+    }
+  },
+  "execution": {
+    "request_concurrency": 4,
+    "format_retries": 1,
+    "request_interval_seconds": 0,
+    "rate_limit_retries": 0
+  },
+  "cpu_reference_sources": {},
+  "codebooks": {
+    "goals": "GOAL_CODEBOOK.md",
+    "alignment": "ALIGNMENT_CODEBOOK.md",
+    "operator": "OPERATOR_CODEBOOK.md"
+  }
+}

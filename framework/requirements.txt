@@ -1,0 +1,3 @@
+# Existing CPU environment; no GPU inference dependency.
+Pillow
+jsonschema>=4.18

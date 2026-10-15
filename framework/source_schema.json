@@ -1,0 +1,215 @@
+{
+  "type": "object",
+  "properties": {
+    "source_format": {
+      "enum": [
+        "E1_NATIVE_SOURCE_V2"
+      ]
+    },
+    "dataset": {
+      "enum": [
+        "AgentNet",
+        "OM2W",
+        "OSWorld",
+        "WebChain"
+      ]
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trajectory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "split": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instruction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instruction_source": {
+      "type": "object"
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "raw_step": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "CODE",
+                  "TOOL_CALL",
+                  "CONTROL",
+                  "PUBLIC_ANSWER",
+                  "COMMAND"
+                ]
+              },
+              "content": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "kind",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "pre": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_locator": {
+                "type": "object"
+              },
+              "modality": {
+                "enum": [
+                  "NATIVE_GUI"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "PRESENT",
+                  "MISSING"
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "source_locator",
+              "modality",
+              "status"
+            ],
+            "additionalProperties": false
+          },
+          "post": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_locator": {
+                "type": "object"
+              },
+              "modality": {
+                "enum": [
+                  "NATIVE_GUI"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "PRESENT",
+                  "MISSING"
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "source_locator",
+              "modality",
+              "status"
+            ],
+            "additionalProperties": false
+          },
+          "source_locator": {
+            "type": "object"
+          },
+          "terminal_event": {
+            "enum": [
+              true,
+              false
+            ]
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "position",
+          "raw_step",
+          "action",
+          "pre",
+          "post",
+          "source_locator",
+          "terminal_event",
+          "environment"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "recording_scope": {
+      "enum": [
+        "ALL_NATIVE_RECORDED_EVENTS"
+      ]
+    },
+    "terminal_event_present": {
+      "enum": [
+        true,
+        false
+      ]
+    },
+    "natural_search_bout_end_certified": {
+      "enum": [
+        false
+      ]
+    },
+    "trial_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cohort": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "source_format",
+    "dataset",
+    "task_id",
+    "trajectory_id",
+    "actor_id",
+    "family_id",
+    "split",
+    "instruction",
+    "instruction_source",
+    "events",
+    "recording_scope",
+    "terminal_event_present",
+    "natural_search_bout_end_certified",
+    "trial_role"
+  ],
+  "additionalProperties": false
+}

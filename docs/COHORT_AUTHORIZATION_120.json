@@ -1,0 +1,21 @@
+{
+  "cohort": "E1_PUBLIC_SOURCE_120",
+  "authorized_for": "MODEL_ANNOTATION_COHORT",
+  "authorization_basis": "User request in this conversation, 2026-10-15: integrate quickstart, clarify the formal 120-trajectory model annotation cohort, and perform E2E acceptance.",
+  "expected_trajectories": 120,
+  "expected_families": 40,
+  "expected_by_dataset": {
+    "AgentNet": 10,
+    "OM2W": 40,
+    "OSWorld": 60,
+    "WebChain": 10
+  },
+  "original_split": "SOURCE_ONLY_NOT_E1_SEMANTICALLY_REVIEWED",
+  "original_trial_role": "SOURCE_INTEGRITY_AUDIT_ONLY",
+  "derived_split": "MODEL_ANNOTATION_COHORT",
+  "derived_trial_role": "FULL_TRIAL",
+  "source_manifest_sha256": "0eb355f652a71f29afb52ec075a91b13131473731b8cc9defd33d7d3dab2ee38",
+  "scope": "Permission to generate model annotation requests for the explicitly selected 120 source traces, retaining original role/provenance. Does not approve selecting additional trajectories or using this as independent Human Gold.",
+  "payment_policy": "Setup/technical mock validation are authorized; any actual paid inference requires a user-provided API key and explicit probe/run execution.",
+  "validation_contract": "BOUND-R3 run_batch.prepare derives the MODEL_ANNOTATION_COHORT and FULL_TRIAL fields only in copied batch inputs and retains original_source_roles in BATCH_INDEX.jsonl. Original public SOURCE_PACKAGE_120 remains unchanged."
+}

@@ -1,0 +1,34 @@
+# Local sources, observations, provider responses and annotations
+runs/
+data/
+images/
+*.jsonl
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.zip
+*.tar
+*.gz
+
+# Credentials and machine-local configuration
+.env
+.env.*
+*.pem
+*.key
+config.local*.json
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local read-only baseline references used only by one original test
+/EXPERIMENT_1_CURRENT/
+
+# Quickstart downloads, provider settings and results
+/_e1_work/
+/framework/runs/
+/config_api.json
